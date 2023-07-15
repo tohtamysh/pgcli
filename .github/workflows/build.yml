@@ -40,4 +40,4 @@ jobs:
           file: ./Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ needs.prepare.outputs.tags }}
+          tags: ${{ steps.prep.outputs.tags }}
