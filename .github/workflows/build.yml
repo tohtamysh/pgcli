@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare
+      - name: prepare
         id: prep
         run: |
           DOCKER_IMAGE=ghcr.io/tohtamysh/pgcli
@@ -40,4 +40,4 @@ jobs:
           file: ./Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ needs.secret-generator.outputs.tags }}
+          tags: ${{ needs.prepare.outputs.tags }}
